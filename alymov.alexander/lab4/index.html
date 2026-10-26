@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лабораторная работа 4</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Лабораторная работа 4</h1>
+      <form data-testid="entity-form">
+        <input
+          type="text"
+          name="id"
+          placeholder="ID"
+          inputmode="numeric"
+          aria-label="ID"
+        />
+        <input
+          type="text"
+          name="name"
+          placeholder="Название"
+          aria-label="Название"
+        />
+        <input
+          type="text"
+          name="price"
+          placeholder="Цена"
+          inputmode="decimal"
+          aria-label="Цена"
+        />
+        <button type="submit">Добавить товар</button>
+      </form>
+      <p data-testid="status" class="status" role="status"></p>
+      <section
+        data-testid="entity-list"
+        aria-label="Список элементов"
+      ></section>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
