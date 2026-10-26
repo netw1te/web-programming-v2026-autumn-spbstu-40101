@@ -30,11 +30,11 @@ h1 {
   width: var(--flag-width);
   max-width: 100%;
   aspect-ratio: 3 / 2;
-  background: #ffffff;
-  border: 1px solid #cccccc;
+  background: #fff;
+  border: 1px solid #ccc;
 }
 
-.flag__circle {
+.flag-circle {
   position: absolute;
   top: 50%;
   left: 50%;
