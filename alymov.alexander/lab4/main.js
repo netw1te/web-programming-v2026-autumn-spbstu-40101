@@ -1,6 +1,6 @@
 import {
   Product,
-  groupByCategory,
+  groupProductsByCategory,
   getUniqueCategories,
   groupByPriceRange,
 } from './model.js';
@@ -230,6 +230,6 @@ form.addEventListener('submit', (event) => {
 
 render();
 
-console.warn('Группы по категориям:', groupByCategory(products));
+console.warn('Группы по категориям:', groupProductsByCategory(products));
 console.warn('Уникальные категории:', getUniqueCategories(products));
 console.warn('Группы по ценам:', groupByPriceRange(products));

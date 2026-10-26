@@ -29,16 +29,16 @@ export class Product {
   }
 }
 
-export {Product as product};
+export { Product as product };
 
 export const DEFAULT_PRICE_RANGES = [
-  {label: 'до 1 000', min: 0, max: 1000},
-  {label: '1 000 – 10 000', min: 1000, max: 10000},
-  {label: '10 000 – 50 000', min: 10000, max: 50000},
-  {label: 'от 50 000', min: 50000, max: Infinity},
+  { label: 'до 1 000', min: 0, max: 1000 },
+  { label: '1 000 – 10 000', min: 1000, max: 10000 },
+  { label: '10 000 – 50 000', min: 10000, max: 50000 },
+  { label: 'от 50 000', min: 50000, max: Infinity },
 ];
 
-export function groupByCategory(products) {
+export function groupProductsByCategory(products) {
   const groups = {};
   for (const item of products) {
     for (const category of item.categories) {
