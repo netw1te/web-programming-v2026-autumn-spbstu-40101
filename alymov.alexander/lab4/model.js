@@ -29,13 +29,13 @@ export class Product {
   }
 }
 
-export { Product as product };
+export {Product as product};
 
 export const DEFAULT_PRICE_RANGES = [
-  { label: 'до 1 000', min: 0, max: 1000 },
-  { label: '1 000 – 10 000', min: 1000, max: 10000 },
-  { label: '10 000 – 50 000', min: 10000, max: 50000 },
-  { label: 'от 50 000', min: 50000, max: Infinity },
+  {label: 'до 1 000', min: 0, max: 1000},
+  {label: '1 000 – 10 000', min: 1000, max: 10000},
+  {label: '10 000 – 50 000', min: 10000, max: 50000},
+  {label: 'от 50 000', min: 50000, max: Infinity},
 ];
 
 export function groupProductsByCategory(products) {
@@ -55,7 +55,10 @@ export function getUniqueCategories(products) {
   return [...new Set(products.flatMap((item) => item.categories))];
 }
 
-export function groupByPriceRange(products, ranges = DEFAULT_PRICE_RANGES) {
+export function groupProductsByPriceRange(
+  products,
+  ranges = DEFAULT_PRICE_RANGES,
+) {
   const groups = {};
   for (const range of ranges) {
     groups[range.label] = [];

@@ -2,7 +2,7 @@ import {
   Product,
   groupProductsByCategory,
   getUniqueCategories,
-  groupByPriceRange,
+  groupProductsByPriceRange,
 } from './model.js';
 
 const STORAGE_KEY = 'products';
@@ -79,7 +79,7 @@ function findProduct(id) {
   return found;
 }
 
-function addProduct({ idText, name, priceText }) {
+function addProduct({idText, name, priceText}) {
   return runOperation(() => {
     const id = Number(idText);
     const price = Number(priceText);
@@ -183,7 +183,9 @@ function createCard(product) {
 
   const addButton = el('button', undefined, 'Добавить категорию');
   addButton.type = 'button';
-  addButton.addEventListener('click', () => addCategory(product.id, input.value));
+  addButton.addEventListener('click', () =>
+    addCategory(product.id, input.value),
+  );
 
   const removeCategoryButton = el('button', undefined, 'Удалить категорию');
   removeCategoryButton.type = 'button';
@@ -194,7 +196,9 @@ function createCard(product) {
   const removeProductButton = el('button', 'danger', 'Удалить товар');
   removeProductButton.type = 'button';
   removeProductButton.setAttribute('data-testid', 'delete-entity');
-  removeProductButton.addEventListener('click', () => removeProduct(product.id));
+  removeProductButton.addEventListener('click', () =>
+    removeProduct(product.id),
+  );
 
   const actions = el('div', 'card-actions');
   actions.append(input, addButton, removeCategoryButton, removeProductButton);
@@ -232,4 +236,4 @@ render();
 
 console.warn('Группы по категориям:', groupProductsByCategory(products));
 console.warn('Уникальные категории:', getUniqueCategories(products));
-console.warn('Группы по ценам:', groupByPriceRange(products));
+console.warn('Группы по ценам:', groupProductsByPriceRange(products));
